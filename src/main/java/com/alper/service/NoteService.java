@@ -19,6 +19,10 @@ public class NoteService {
 	@Autowired
 	private NoteDAO noteDAO;
 	
+	public Long updateNote(Note note,HttpServletRequest request){
+		noteDAO.update(note);
+		return 1l;
+	}
 	public Long createNote(Note note,HttpServletRequest request){
 		//TODO: USER ID DEÐÝÞECEK
 		note.setUser_id(1l);

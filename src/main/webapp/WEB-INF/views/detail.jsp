@@ -30,17 +30,17 @@
 	<!-- Google Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic|Roboto:400,300,700' rel='stylesheet' type='text/css'>
 	<!-- Animate -->
-	<link rel="stylesheet" href="asset/css/animate.css">
+	<link rel="stylesheet" href="./../asset/css/animate.css">
 	<!-- Icomoon -->
-	<link rel="stylesheet" href="asset/css/icomoon.css">
+	<link rel="stylesheet" href="./../asset/css/icomoon.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="asset/css/bootstrap.css">
+	<link rel="stylesheet" href="./../asset/css/bootstrap.css">
 
-	<link rel="stylesheet" href="asset/css/style.css">
+	<link rel="stylesheet" href="./../asset/css/style.css">
 
 
 	<!-- Modernizr JS -->
-	<script src="asset/js/modernizr-2.6.2.min.js"></script>
+	<script src="./../asset/js/modernizr-2.6.2.min.js"></script>
 
 	</head>
 	<body>
@@ -50,7 +50,7 @@
 		<a href="#" class="fh5co-close-offcanvas js-fh5co-close-offcanvas"><span><i class="icon-cross3"></i> <span>Kapat</span></span></a>
 		<div class="fh5co-bio">
 			<figure>
-				<img src="asset/images/person1.jpg" alt="Free HTML5 Bootstrap Template" class="img-responsive">
+				<img src="./../asset/images/person1.jpg" alt="Free HTML5 Bootstrap Template" class="img-responsive">
 			</figure>
 			<h3 class="heading">Hakkımda</h3>
 			<h2>Onur Ciner</h2>
@@ -90,7 +90,7 @@
 		<div class="row fh5co-post-entry single-entry">
 			<article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
 				
-				<span class="fh5co-meta animate-box"><a href="single.html">Teknoloji</a></span>
+			
 				<h2 class="fh5co-article-title animate-box"><input type="text" id="note_title" placeholder="başlık" disabled="disabled"></h2>
 				
 				
@@ -103,7 +103,7 @@
 						<div class="col-lg-4 animate-box">
 							<div class="fh5co-highlight right">
 								
-									<button class="btn btn-primary" style="width: 100%" onclick="Update()">Güncelle</button>
+									<button class="btn btn-primary" style="width: 100%" onclick="update()" id="updateBtn">GÜNCELLE</button>
 							</div>
 						</div>
 					</div>
@@ -119,17 +119,18 @@
 	</footer>
 	
 	<!-- jQuery -->
-	<script src="asset/js/jquery.min.js"></script>
+	<script src="./../asset/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
-	<script src="asset/js/jquery.easing.1.3.js"></script>
+	<script src="./../asset/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="asset/js/bootstrap.min.js"></script>
+	<script src="./../asset/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="asset/js/jquery.waypoints.min.js"></script>
+	<script src="./../asset/js/jquery.waypoints.min.js"></script>
 	<!-- Main JS -->
-	<script src="js/main.js"></script>
+	<script src="./../asset/js/main.js"></script>
 	<!-- Main JS -->
-	<script src="asset/custom/detail.js"></script>
+	<script src="./../asset/custom/detail.js"></script>
+	
 
 	</body>
 </html>

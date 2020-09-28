@@ -77,6 +77,17 @@ public class HomeController {
 		
 		return new ResponseEntity<>("OK",HttpStatus.CREATED);
 	}
+	
+	@RequestMapping(value="/updateNote",method=RequestMethod.POST)
+	public ResponseEntity<String> updateNote(@RequestBody Note note, HttpServletRequest request){
+		Note oldNote = noteService.getNoteFindById(note.getId());
+		oldNote.setTitle(note.getTitle());
+		oldNote.setContent(note.getContent());
+		noteService.updateNote(oldNote,request);
+		
+		
+		return new ResponseEntity<>("OK",HttpStatus.CREATED);
+	}
 	@RequestMapping(value="/getNotes",method=RequestMethod.POST)
 	public ResponseEntity<ArrayList<Note>> getNotes(HttpServletRequest request){
 	
@@ -85,9 +96,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/getNote",method=RequestMethod.POST)
-	public ResponseEntity<Note> getNotes(@RequestBody Long id, HttpServletRequest request){
+	public ResponseEntity<Note> getNotes(@RequestBody String id, HttpServletRequest request){
 	
 		
-		return new ResponseEntity<>(noteService.getNoteFindById(id),HttpStatus.CREATED);
+		return new ResponseEntity<>(noteService.getNoteFindById(Long.parseLong(id)),HttpStatus.CREATED);
 	}
 }
