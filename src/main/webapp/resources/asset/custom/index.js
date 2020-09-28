@@ -1,20 +1,30 @@
-function addNote(){
-	var param = {
-			title:$("#note_title").val(),
-			content:$("#note_detail").val()
+$(document).ready(function(){
+	getNotes();
+	//setInterval(function(){  }, 3000);
+});
+	function getNotes(){
+		$.ajax({
+			type:"POST",
+			url:'getNotes',
+			success:function(data){
+				var list="";
+				$(data).each(function(i,val){
+					
+					list= list
+					+'<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12">'
+					+'<h2 class="fh5co-article-title"><a href="detay/'+val.id+'">'+val.title+'</a></h2>'
+					+'<h3><a href="detay/'+val.id+'"  style="color:#999999">'+val.content+'</a></h3>'
+					+'<span class="fh5co-meta fh5co-date">'+new Date(val.create_date).toLocaleDateString()+'</span>'
+					+'</article>';
+					
+					
+				});
+				$("#list").html(list);
+				
+				
+			}, error:function(data){
+				alert(data);
+			}
+			
+		});
 	}
-	
-	var ser_data = JSON.stringify(param);
-	$.ajax({
-		type:"POST",
-		contentType:'application/json; charset=UTF-8',
-		url:'addNote',
-		data: ser_data,
-		success:function(data){
-			alert(data);
-		}, error:function(data){
-			alert(data);
-		}
-		
-	});
-}

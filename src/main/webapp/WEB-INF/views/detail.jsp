@@ -44,6 +44,8 @@
 
 	</head>
 	<body>
+	<input type="text" hidden style="display:none" value="${id}" id="id"/>
+	
 	<div id="fh5co-offcanvas">
 		<a href="#" class="fh5co-close-offcanvas js-fh5co-close-offcanvas"><span><i class="icon-cross3"></i> <span>Kapat</span></span></a>
 		<div class="fh5co-bio">
@@ -89,34 +91,25 @@
 			<article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
 				
 				<span class="fh5co-meta animate-box"><a href="single.html">Teknoloji</a></span>
-				<h2 class="fh5co-article-title animate-box"><a href="single.html">Blog Başlığı</a></h2>
-				<span class="fh5co-meta fh5co-date animate-box">6 Mart 2016</span>
+				<h2 class="fh5co-article-title animate-box"><input type="text" id="note_title" placeholder="başlık" disabled="disabled"></h2>
+				
 				
 				<div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
 					<div class="row">
 						<div class="col-lg-8 cp-r animate-box">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget urna ultricies leo malesuada volutpat et eu arcu. Quisque sed gravida dui, eget hendrerit libero. 
-							Nullam mattis faucibus ullamcorper. Proin ut metus cursus, accumsan augue id, interdum elit. Cras auctor egestas dui, vel rhoncus risus mattis sit amet. 
-							Nunc sollicitudin magna vel lacus mollis dignissim. Sed enim ligula, efficitur in varius at, tempor nec tortor. 
-							Cras bibendum mollis viverra. Nulla elementum ullamcorper volutpat. Sed eget diam at leo sollicitudin tincidunt. Maecenas sit amet odio semper, pretium purus in, convallis est. In ultrices lacinia arcu in facilisis.
-							Sed nisl nulla, sollicitudin eget vehicula sit amet, viverra eget ligula.
-							Proin tincidunt fringilla faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
-							Duis ullamcorper dui mattis tortor lobortis, at viverra urna suscipit. 
-							Nam ornare, metus at ultricies venenatis, arcu risus blandit ipsum, eget elementum mauris ante pulvinar sapien. Pellentesque id maximus est, vel hendrerit ante. 
-							Aliquam facilisis purus tellus, in pretium nibh lobortis efficitur. Aenean mattis lorem mi, eu molestie nisl pellentesque id. In non congue augue. Integer enim libero, sagittis eu mattis eu, scelerisque sit amet urna. 
-							Donec hendrerit quis nunc sit amet cursus. Fusce justo metus, rhoncus vel nisl et, sodales lacinia nunc. Ut placerat felis sit amet condimentum laoreet. Vivamus facilisis sapien mauris, id molestie ex feugiat id.
-							Vivamus ac eleifend sem, vel dignissim turpis. Donec at tincidunt arcu.</p>
+							<textarea class="form form-control" id="note_detail" style="height: 400px; width: 100%" placeholder="içerik" disabled="disabled"></textarea>
 
 						</div>
 						<div class="col-lg-4 animate-box">
 							<div class="fh5co-highlight right">
-								<h4>Kısa Açıklaması</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
+								
+									<button class="btn btn-primary" style="width: 100%" onclick="Update()">Güncelle</button>
 							</div>
 						</div>
 					</div>
 
 				</div>
+
 			</article>
 		</div>
 	</div>
@@ -135,6 +128,8 @@
 	<script src="asset/js/jquery.waypoints.min.js"></script>
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
+	<!-- Main JS -->
+	<script src="asset/custom/detail.js"></script>
 
 	</body>
 </html>

@@ -47,7 +47,7 @@ public class NoteDAO {
 	}
 	
 	public ArrayList<Note> getAll(Long user_id){
-		Query query = sessionFactory.getCurrentSession().createQuery("FROM Note WHERE user_id=:user_id")
+		Query query = sessionFactory.getCurrentSession().createQuery("FROM Note WHERE user_id=:user_id order by id desc")
 				.setLong("user_id", user_id);
 		return (ArrayList<Note>) query.getResultList();
 	}

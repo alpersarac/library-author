@@ -71,38 +71,9 @@
 	</header>
 	<!-- END #fh5co-header -->
 	<div class="container-fluid">
-		<div class="row fh5co-post-entry"> 
-			<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
-				<span class="fh5co-meta"><a href="detay">Teknoloji</a></span>
-				<h2 class="fh5co-article-title"><a href="single.html">Blog Başlığı</a></h2> 
-				<h3><a href="single.html"  style="color:#999999">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</a></h3>
-				<span class="fh5co-meta fh5co-date">6 Mart 2016</span>
-			</article>
-			<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
-				<span class="fh5co-meta"><a href="single.html">Teknoloji</a></span>
-				<h2 class="fh5co-article-title"><a href="single.html">Blog Başlığı</a></h2> 
-				<h3><a href="single.html"  style="color:#999999">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</a></h3>
-				<span class="fh5co-meta fh5co-date">6 Mart 2016</span>
-			</article>
-			<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
-				<span class="fh5co-meta"><a href="single.html">Teknoloji</a></span>
-				<h2 class="fh5co-article-title"><a href="single.html">Blog Başlığı</a></h2> 
-				<h3><a href="single.html"  style="color:#999999">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</a></h3>
-				<span class="fh5co-meta fh5co-date">6 Mart 2016</span>
-			</article>
-			<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
-				<span class="fh5co-meta"><a href="single.html">Teknoloji</a></span>
-				<h2 class="fh5co-article-title"><a href="single.html">Blog Başlığı</a></h2> 
-				<h3><a href="single.html"  style="color:#999999">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</a></h3>
-				<span class="fh5co-meta fh5co-date">6 Mart 2016</span>
-			</article>
-			<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
-				<span class="fh5co-meta"><a href="single.html">Teknoloji</a></span>
-				<h2 class="fh5co-article-title"><a href="single.html">Blog Başlığı</a></h2> 
-				<h3><a href="single.html"  style="color:#999999">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</a></h3>
-				<span class="fh5co-meta fh5co-date">6 Mart 2016</span>
-			</article>
+		<div class="row fh5co-post-entry" id="list"> 
 			
+
 		</div>
 	</div>
 

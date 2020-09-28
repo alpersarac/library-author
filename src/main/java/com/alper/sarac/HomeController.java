@@ -2,6 +2,7 @@ package com.alper.sarac;
 
 import java.beans.PropertyVetoException;
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
@@ -17,6 +18,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,14 +42,16 @@ public class HomeController {
 		System.out.print(req.getRemoteAddr());
 		model.addAttribute("baslik","NOTE APP");
 		model.addAttribute("serverTime", "Özgür Yazlým sa" );
+		model.addAttribute("notlar",noteService.getAll(1l));
 		
 		return "index";
 	}
 	
-	@RequestMapping(value = "/detay", method = RequestMethod.GET)
-	public String homeS(Model model){
+	@RequestMapping(value = "/detay/{id}", method = RequestMethod.GET)
+	public String homeS(@PathVariable("id") Long id, Model model){
 		
-		
+		model.addAttribute("id",id);
+		System.out.println(id);
 		return "detail";
 	}
 	@RequestMapping(value = "/ekle", method = RequestMethod.GET)
@@ -72,5 +76,18 @@ public class HomeController {
 		
 		
 		return new ResponseEntity<>("OK",HttpStatus.CREATED);
+	}
+	@RequestMapping(value="/getNotes",method=RequestMethod.POST)
+	public ResponseEntity<ArrayList<Note>> getNotes(HttpServletRequest request){
+	
+		
+		return new ResponseEntity<>(noteService.getAll(1l),HttpStatus.CREATED);
+	}
+	
+	@RequestMapping(value="/getNote",method=RequestMethod.POST)
+	public ResponseEntity<Note> getNotes(@RequestBody Long id, HttpServletRequest request){
+	
+		
+		return new ResponseEntity<>(noteService.getNoteFindById(id),HttpStatus.CREATED);
 	}
 }
