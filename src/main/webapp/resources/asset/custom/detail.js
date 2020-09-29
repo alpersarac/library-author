@@ -59,6 +59,27 @@ $(document).ready(function(){
 		});
 	}
 	
+	function deleteNote(){
+		var param = {
+				id:$("#id").val()
+		}
+		
+		var ser_data = JSON.stringify(param);
+		$.ajax({
+			type:"POST",
+			contentType:'application/json; charset=UTF-8',
+			url:'./../deleteNote',
+			data: ser_data,
+			success:function(data){
+				alert(data);
+				window.history.back();
+			}, error:function(data){
+				alert(data);
+			}
+			
+		});
+	}
+	
 	
 	
 	

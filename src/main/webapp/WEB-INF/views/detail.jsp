@@ -104,6 +104,8 @@
 							<div class="fh5co-highlight right">
 								
 									<button class="btn btn-primary" style="width: 100%" onclick="update()" id="updateBtn">GÜNCELLE</button>
+									<br>
+									<button class="btn btn-danger" style="width: 100%" onclick="deleteNote()">SİL</button>
 							</div>
 						</div>
 					</div>

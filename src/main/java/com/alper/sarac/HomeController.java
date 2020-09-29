@@ -1,4 +1,4 @@
-package com.alper.sarac;
+	package com.alper.sarac;
 
 import java.beans.PropertyVetoException;
 import java.text.DateFormat;
@@ -24,20 +24,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.alper.entity.Note;
+import com.alper.service.MailService;
 import com.alper.service.NoteService;
 
 
 @Controller
 public class HomeController {
-	
+	public static String url="http://localhost:8080/notalma";
 	@Autowired
 	private NoteService noteService;
+	
+	@Autowired
+	private MailService mailService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String home(Model model,HttpServletRequest req) {
+		
+		System.out.print(req.getRemoteAddr());
+		
+		
+		return "redirect:/index";
+	}
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String homes(Model model,HttpServletRequest req) {
+		
+		System.out.print(req.getRemoteAddr());
+		
+		
+		return "redirect:/index";
+	}
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String index(Model model,HttpServletRequest req) {
 		
 		System.out.print(req.getRemoteAddr());
 		model.addAttribute("baslik","NOTE APP");
@@ -51,7 +71,9 @@ public class HomeController {
 	public String homeS(@PathVariable("id") Long id, Model model){
 		
 		model.addAttribute("id",id);
-		System.out.println(id);
+		
+		mailService.registerMail("alper.sarac42@gmail.com", "123");
+		
 		return "detail";
 	}
 	@RequestMapping(value = "/ekle", method = RequestMethod.GET)
@@ -84,6 +106,16 @@ public class HomeController {
 		oldNote.setTitle(note.getTitle());
 		oldNote.setContent(note.getContent());
 		noteService.updateNote(oldNote,request);
+		
+		
+		return new ResponseEntity<>("OK",HttpStatus.CREATED);
+	}
+	@RequestMapping(value="/deleteNote",method=RequestMethod.POST)
+	public ResponseEntity<String> deleteNote(@RequestBody Note note, HttpServletRequest request){
+		Note oldNote = noteService.getNoteFindById(note.getId());
+		
+		
+		noteService.deleteNote(oldNote, request);
 		
 		
 		return new ResponseEntity<>("OK",HttpStatus.CREATED);

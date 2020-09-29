@@ -23,6 +23,10 @@ public class NoteService {
 		noteDAO.update(note);
 		return 1l;
 	}
+	public Long deleteNote(Note note,HttpServletRequest request){
+		noteDAO.delete(note);
+		return 1l;
+	}
 	public Long createNote(Note note,HttpServletRequest request){
 		//TODO: USER ID DEÐÝÞECEK
 		note.setUser_id(1l);
