@@ -21,6 +21,7 @@ function addUser(){
 				alert("Passwords are not matching");
 			}else if(data=='OK'){
 				alert("Register has been successfully created");
+				$(location).attr('href','login');
 			}else if(data=='ERROR'){
 				alert("An error occured.");
 			}

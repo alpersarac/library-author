@@ -24,18 +24,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.alper.entity.Note;
+import com.alper.security.LoginFilter;
 import com.alper.service.MailService;
 import com.alper.service.NoteService;
 
 
 @Controller
 public class HomeController {
-	public static String url="http://localhost:8080/notalma";
+	public static String url="http://localhost:8080/sarac";
 	@Autowired
 	private NoteService noteService;
 	
-	@Autowired
-	private MailService mailService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -58,9 +57,10 @@ public class HomeController {
 	}
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(Model model,HttpServletRequest req) {
+		model.addAttribute("user",req.getSession().getAttribute("user"));
 		
 		System.out.print(req.getRemoteAddr());
-		model.addAttribute("baslik","NOTE APP");
+		model.addAttribute("baslik","Library Özgür Yazýlým");
 		model.addAttribute("serverTime", "Özgür Yazlým sa" );
 		model.addAttribute("notlar",noteService.getAll(1l));
 		
@@ -72,7 +72,7 @@ public class HomeController {
 		
 		model.addAttribute("id",id);
 		
-		mailService.registerMail("alper.sarac42@gmail.com", "123");
+		
 		
 		return "detail";
 	}
@@ -124,13 +124,17 @@ public class HomeController {
 	public ResponseEntity<ArrayList<Note>> getNotes(HttpServletRequest request){
 	
 		
-		return new ResponseEntity<>(noteService.getAll(1l),HttpStatus.CREATED);
+		return new ResponseEntity<>(noteService.getAll(LoginFilter.user.getId()),HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(value="/getNote",method=RequestMethod.POST)
 	public ResponseEntity<Note> getNotes(@RequestBody String id, HttpServletRequest request){
 	
+		Note note = noteService.getNoteFindById(Long.parseLong(id));
+		if (note.getUser_id().equals(LoginFilter.user.getId())) {
+			return new ResponseEntity<>(noteService.getNoteFindById(Long.parseLong(id)),HttpStatus.CREATED);
+		}
 		
-		return new ResponseEntity<>(noteService.getNoteFindById(Long.parseLong(id)),HttpStatus.CREATED);
+		return new ResponseEntity<>(null,HttpStatus.CREATED);
 	}
 }
